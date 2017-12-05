@@ -341,6 +341,11 @@ game_state.play.prototype = {
         this.player.body.collideWorldBounds = true;
         this.player.disabled = false;
 
+        this.left = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
+        this.right = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
+        this.up = game.input.keyboard.addKey(Phaser.Keyboard.UP);
+        this.down = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
+
         this.left = game.input.keyboard.addKey(Phaser.Keyboard.A);
         this.right = game.input.keyboard.addKey(Phaser.Keyboard.D);
         this.up = game.input.keyboard.addKey(Phaser.Keyboard.W);

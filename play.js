@@ -9,7 +9,7 @@ game_state.play.prototype = {
 
     preload: function() {
         game.load.image('player', 'assets/player.png');
-        game.load.image('secretPlayer', 'assets/a.png');
+        game.load.image('challengePlayer', 'assets/challenge.png');
         game.load.image('roll', 'assets/roll.png');
         game.load.image('vertical', 'assets/vertical.png');
         game.load.image('horizontal', 'assets/horizontal.png');
@@ -108,63 +108,63 @@ game_state.play.prototype = {
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
-        [[ ],[ ],[ ],[0],[ ]],
-        [[ ],[ ],[0],[ ],[ ]],
-        [[ ],[0],[ ],[ ],[ ]],
+        [[0],[0],[0],[0],[ ]],
+        [[0],[0],[0],[ ],[ ]],
+        [[0],[0],[ ],[ ],[ ]],
         [[0],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
-        [[ ],[0],[ ],[ ],[ ]],
-        [[ ],[ ],[0],[ ],[ ]],
-        [[ ],[ ],[ ],[0],[ ]],
+        [[ ],[0],[0],[0],[0]],
+        [[ ],[ ],[0],[0],[0]],
+        [[ ],[ ],[ ],[0],[0]],
         [[ ],[ ],[ ],[ ],[0]],
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
-        [[ ],[ ],[ ],[0],[ ]],
-        [[ ],[ ],[0],[ ],[ ]],
-        [[ ],[0],[ ],[ ],[ ]],
+        [[0],[0],[0],[0],[ ]],
+        [[0],[0],[0],[ ],[ ]],
+        [[0],[0],[ ],[ ],[ ]],
         [[0],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
-        [[ ],[0],[ ],[ ],[ ]],
-        [[ ],[ ],[0],[ ],[ ]],
-        [[ ],[ ],[ ],[0],[ ]],
+        [[ ],[0],[0],[0],[0]],
+        [[ ],[ ],[0],[0],[0]],
+        [[ ],[ ],[ ],[0],[0]],
         [[ ],[ ],[ ],[ ],[0]],
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
-        [[ ],[ ],[ ],[0],[ ]],
-        [[ ],[ ],[0],[ ],[ ]],
-        [[ ],[0],[ ],[ ],[ ]],
+        [[0],[0],[0],[0],[ ]],
+        [[0],[0],[0],[ ],[ ]],
+        [[0],[0],[ ],[ ],[ ]],
         [[0],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
-        [[ ],[0],[ ],[ ],[ ]],
-        [[ ],[ ],[0],[ ],[ ]],
-        [[ ],[ ],[ ],[0],[ ]],
+        [[ ],[0],[0],[0],[0]],
+        [[ ],[ ],[0],[0],[0]],
+        [[ ],[ ],[ ],[0],[0]],
         [[ ],[ ],[ ],[ ],[0]],
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
-        [[ ],[ ],[ ],[0],[ ]],
-        [[ ],[ ],[0],[ ],[ ]],
-        [[ ],[0],[ ],[ ],[ ]],
+        [[0],[0],[0],[0],[ ]],
+        [[0],[0],[0],[ ],[ ]],
+        [[0],[0],[ ],[ ],[ ]],
         [[0],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
-        [[ ],[0],[ ],[ ],[ ]],
-        [[ ],[ ],[0],[ ],[ ]],
-        [[ ],[ ],[ ],[0],[ ]],
+        [[ ],[0],[0],[0],[0]],
+        [[ ],[ ],[0],[0],[0]],
+        [[ ],[ ],[ ],[0],[0]],
         [[ ],[ ],[ ],[ ],[0]],
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
-        [[ ],[ ],[ ],[0],[ ]],
-        [[ ],[ ],[0],[ ],[ ]],
-        [[ ],[0],[ ],[ ],[ ]],
+        [[0],[0],[0],[0],[ ]],
+        [[0],[0],[0],[ ],[ ]],
+        [[0],[0],[ ],[ ],[ ]],
         [[0],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
-        [[ ],[0],[ ],[ ],[ ]],
-        [[ ],[ ],[0],[ ],[ ]],
-        [[ ],[ ],[ ],[0],[ ]],
+        [[ ],[0],[0],[0],[0]],
+        [[ ],[ ],[0],[0],[0]],
+        [[ ],[ ],[ ],[0],[0]],
         [[ ],[ ],[ ],[ ],[0]],
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
@@ -319,7 +319,7 @@ game_state.play.prototype = {
             localStorage.skinOn === "Off";
         }
         if (localStorage.skinOn === "On") {
-            this.player = game.add.sprite(-300, 300, 'secretPlayer');
+            this.player = game.add.sprite(-300, 300, 'challengePlayer');
         } else {
             this.player = game.add.sprite(-300, 300, 'player');
         }
@@ -394,7 +394,7 @@ game_state.play.prototype = {
             }
         } else
         if (this.level === "6" && this.textSaid === false) {
-            this.text = game.add.text(10, 10, "Well, congratualations. You finished the demo! \nThe full version will come out soon with more \nlevels, better graphics, new features, and more! \n\n Thank you for playing my game! ヽ(‘ ∇‘ )ノ\n\nSpecial Skin Unlocked.\n Press enter to go back.", {font: "bold 32px Arial", fill: "#ffffff", align: "center" });
+            this.text = game.add.text(10, 10, "Well, congratualations. You finished the demo! \nThe full version will come out soon with more \nlevels, better graphics, new features, and more! \n\n Thank you for playing my game! ヽ(‘ ∇‘ )ノ\n\nChallenge Skin Unlocked.\n Press enter to go back.", {font: "bold 32px Arial", fill: "#ffffff", align: "center" });
             this.textSaid = true;
             this.text.position.x = 400 - this.text.width / 2;
             this.text.position.y = 300 - this.text.height / 2;

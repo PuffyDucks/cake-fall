@@ -21,6 +21,8 @@ game_state.play.prototype = {
         // localStorage.someVarName = sadjfklj;
         // console.log(localStorage.someVarName);
         this.level = localStorage.playingLevel;
+        this.level = this.level + 1;
+        this.level = this.level - 1;
 
         this.time= 0;
         this.wait = 0;
@@ -558,8 +560,6 @@ game_state.play.prototype = {
     },
 
     update: function() {
-    console.log(this.level);
-    console.log(this.levels.length);
         if (this.level < this.levels.length + 1) {
             if (this.time%this.parse === 0) {
                 // if (this.level1.length = )
@@ -588,7 +588,7 @@ game_state.play.prototype = {
         } else
         if (this.textSaid === false && this.level > this.levels.length + 1) {
             game.stage.backgroundColor = '#ff0000';
-            this.text = game.add.text(160, 450, "well ok you're not supposed to see this screen.", {font: "bold 32px Arial", fill: "#ffffff", align: "center" });
+            this.text = game.add.text(160, 450, "well ok you're not supposed to see this screen \n\n ... \n\n cheater", {font: "bold 32px Arial", fill: "#ffffff", align: "center" });
             this.textSaid = true;
             this.text.position.x = 400 - this.text.width / 2;
             this.text.position.y = 300 - this.text.height / 2;

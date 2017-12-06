@@ -588,7 +588,7 @@ game_state.play.prototype = {
         } else
         if (this.textSaid === false && this.level > this.levels.length + 1) {
             game.stage.backgroundColor = '#ff0000';
-            this.text = game.add.text(160, 450, "Cheater.", {font: "bold 32px Arial", fill: "#ffffff", align: "center" });
+            this.text = game.add.text(160, 450, "well ok you're not supposed to see this screen.", {font: "bold 32px Arial", fill: "#ffffff", align: "center" });
             this.textSaid = true;
             this.text.position.x = 400 - this.text.width / 2;
             this.text.position.y = 300 - this.text.height / 2;

@@ -21,8 +21,8 @@ game_state.play.prototype = {
         // localStorage.someVarName = sadjfklj;
         // console.log(localStorage.someVarName);
         this.level = localStorage.playingLevel;
-        this.level = this.level + 1;
         this.level = this.level - 1;
+        this.level = this.level + 1;
 
         this.time= 0;
         this.wait = 0;

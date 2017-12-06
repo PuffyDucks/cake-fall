@@ -558,6 +558,8 @@ game_state.play.prototype = {
     },
 
     update: function() {
+    console.log(this.level);
+    console.log(this.levels.length);
         if (this.level < this.levels.length + 1) {
             if (this.time%this.parse === 0) {
                 // if (this.level1.length = )

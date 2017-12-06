@@ -530,7 +530,7 @@ game_state.play.prototype = {
 
         this.walls.create(0, 900, 'horizontal');
 
-        if (this.level < this.levels.length) {
+        if (this.level < this.levels.length + 1) {
             this.difficulty = this.levels[this.level - 1][0][0][0];
             this.player.tile = this.levels[this.level - 1][0][1][0];
         }
@@ -558,7 +558,7 @@ game_state.play.prototype = {
     },
 
     update: function() {
-        if (this.level < this.levels.length) {
+        if (this.level < this.levels.length + 1) {
             if (this.time%this.parse === 0) {
                 // if (this.level1.length = )
                 if (this.levels[this.level - 1].length - 2 === this.time/this.parse) {
@@ -577,7 +577,7 @@ game_state.play.prototype = {
                 }
             }
         } else
-        if (this.level === this.levels.length && this.textSaid === false) {
+        if (this.level === this.levels.length + 1 && this.textSaid === false) {
             this.text = game.add.text(10, 10, "Well, congratualations. You finished the demo! \nThe full version will come out soon with more \nlevels, better graphics, new features, and more! \n\n Thank you for playing my game! ヽ(‘ ∇‘ )ノ\n\nChallenge Skin Unlocked.\n Press enter to go back.", {font: "bold 32px Arial", fill: "#ffffff", align: "center" });
             this.textSaid = true;
             this.text.position.x = 400 - this.text.width / 2;
@@ -591,7 +591,7 @@ game_state.play.prototype = {
             this.text.position.x = 400 - this.text.width / 2;
             this.text.position.y = 300 - this.text.height / 2;
         }
-        if (this.level === this.levels.length && this.enter.isDown) {
+        if (this.level === this.levels.length + 1 && this.enter.isDown) {
             game.state.start('title');
         }
         if (this.player.disabled === false) {

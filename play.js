@@ -509,10 +509,10 @@ game_state.play.prototype = {
         this.player.body.collideWorldBounds = true;
         this.player.disabled = false;
 
-        this.left = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
-        this.right = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
-        this.up = game.input.keyboard.addKey(Phaser.Keyboard.UP);
-        this.down = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
+        this.left2 = game.input.keyboard.addKey(Phaser.Keyboard.LEFT);
+        this.right2 = game.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
+        this.up2 = game.input.keyboard.addKey(Phaser.Keyboard.UP);
+        this.down2 = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
 
         this.left = game.input.keyboard.addKey(Phaser.Keyboard.A);
         this.right = game.input.keyboard.addKey(Phaser.Keyboard.D);
@@ -599,22 +599,22 @@ game_state.play.prototype = {
             game.state.start('title');
         }
         if (this.player.disabled === false) {
-            if (this.left.isDown) {
+            if (this.left.isDown || this.left2.isDown) {
                 if (this.player.leftWasDown === false) {
                     this.player.tile--;
                     this.player.leftWasDown = true;
                 }
             }
-            if (this.right.isDown) {
+            if (this.right.isDown || this.right2.isDown) {
                 if (this.player.rightWasDown === false) {
                     this.player.tile++;
                     this.player.rightWasDown = true;
                 }
             }
-            if (this.left.isUp) {
+            if (this.left.isUp || this.left2.isUp) {
                 this.player.leftWasDown = false;
             }
-            if (this.right.isUp) {
+            if (this.right.isUp || this.right2.isUp) {
                 this.player.rightWasDown = false;
             }
         }

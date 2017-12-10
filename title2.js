@@ -32,8 +32,10 @@ game_state.title2.prototype = {
 
         this.left = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
         // this.right = game.input.keyboard.addKey(Phaser.Keyboard.D);
-        this.down = game.input.keyboard.addKey(Phaser.Keyboard.S);
+				this.down = game.input.keyboard.addKey(Phaser.Keyboard.S);
         this.up = game.input.keyboard.addKey(Phaser.Keyboard.W);
+				this.down2 = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
+        this.up2 = game.input.keyboard.addKey(Phaser.Keyboard.UP);
         this.U = game.input.keyboard.addKey(Phaser.Keyboard.ZERO);
         this.T = game.input.keyboard.addKey(Phaser.Keyboard.T);
 
@@ -59,22 +61,22 @@ game_state.title2.prototype = {
             localStorage.playingLevel = this.selectedLevel;
             game.state.start('play');
         }
-        if (this.up.isDown) {
+        if (this.up.isDown || this.up2.isDown) {
             if (this.upWasDown === false) {
                 this.selectedLevel++;
                 this.upWasDown = true;
             }
         }
-        if (this.down.isDown) {
+        if (this.down.isDown || this.down2.isDown) {
             if (this.downWasDown === false) {
                 this.selectedLevel--;
                 this.downWasDown = true;
             }
         }
-        if (this.up.isUp) {
+        if (this.up.isUp || this.up2.isUp) {
             this.upWasDown = false;
         }
-        if (this.down.isUp) {
+        if (this.down.isUp || (this.down2.isUp) {
             this.downWasDown = false;
         }
         if (this.T.isDown && localStorage.finished === "true") {

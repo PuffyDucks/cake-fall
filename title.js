@@ -24,8 +24,10 @@ game_state.title.prototype = {
 
         this.left = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
         // this.right = game.input.keyboard.addKey(Phaser.Keyboard.D);
-        this.down = game.input.keyboard.addKey(Phaser.Keyboard.S);
+				this.down = game.input.keyboard.addKey(Phaser.Keyboard.S);
         this.up = game.input.keyboard.addKey(Phaser.Keyboard.W);
+				this.down2 = game.input.keyboard.addKey(Phaser.Keyboard.DOWN);
+        this.up2 = game.input.keyboard.addKey(Phaser.Keyboard.UP);
         this.U = game.input.keyboard.addKey(Phaser.Keyboard.ZERO);
         this.T = game.input.keyboard.addKey(Phaser.Keyboard.T);
 
@@ -40,7 +42,7 @@ game_state.title.prototype = {
         var style = {
             font: "bold 32px Arial", fill: "#ffffff", align: "center",
         };
-        this.text = game.add.text(200, 200, "Controls: \nA or D to move \nDon't get hit \n\n Enter to start level \nW or D to change level \nMade by Louis" , style);
+        this.text = game.add.text(200, 200, "You're not supposed to see this ._." , style);
         this.text.position.x = 400 - this.text.width / 2;
         this.text.position.y = 300 - this.text.height / 2;
         // text.setTextBounds(0, 100, 800, 100);
@@ -51,22 +53,22 @@ game_state.title.prototype = {
             localStorage.playingLevel = this.selectedLevel;
             game.state.start('play');
         }
-        if (this.up.isDown) {
+        if (this.up.isDown || this.up2.isDown) {
             if (this.upWasDown === false) {
                 this.selectedLevel++;
                 this.upWasDown = true;
             }
         }
-        if (this.down.isDown) {
+        if (this.down.isDown || this.down2.isDown) {
             if (this.downWasDown === false) {
                 this.selectedLevel--;
                 this.downWasDown = true;
             }
         }
-        if (this.up.isUp) {
+        if (this.up.isUp || this.up2.isUp) {
             this.upWasDown = false;
         }
-        if (this.down.isUp) {
+        if (this.down.isUp || this.down2.isUp) {
             this.downWasDown = false;
         }
         if (this.T.isDown && localStorage.finished === "true") {
@@ -93,11 +95,11 @@ game_state.title.prototype = {
         if (this.selectedLevel > localStorage.level) {
             this.selectedLevel = localStorage.level;
         }
-        if (localStorage.finished === "true") {
-            this.text.text = "Enter to start level "  + this.selectedLevel + "\nW or S to change level \nPress 0 to reset the game. \nToggle Skin with T. \nChallenge Skin: " + localStorage.skinOn + "\n\nControls: \nA or D to move \nDon't get hit \n\nMade by Louis";
+				if (localStorage.finished === "true") {
+            this.text.text = "Enter to start level "  + this.selectedLevel + "\nW/S or Up/Down arrow keys to change level \nPress 0 to reset the game. \nToggle Skin with T. \nChallenge Skin: " + localStorage.skinOn + "\n\nControls: \nA/D or Left/Right arrow keys to move \nDon't get hit \n\nMade by Louis";
             this.text.position.y = 75;
         } else {
-            this.text.text = "Enter to start level "  + this.selectedLevel + "\nW or S to change level\n\nControls: \nA or D to move \nDon't get hit \n\nMade by Louis";
+            this.text.text = "Enter to start level "  + this.selectedLevel + "\nW/S or Up/Down arrow keys to change level \n\nControls: \nA/D or Left/Right arrow keys to move \nDon't get hit \n\nMade by Louis";
             this.text.position.x = 400 - this.text.width / 2;
             this.text.position.y = 300 - this.text.height / 2;
         }

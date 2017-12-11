@@ -100,8 +100,8 @@ game_state.title.prototype = {
             this.text.position.y = 75;
         } else {
             this.text.text = "Enter to start level "  + this.selectedLevel + "\nW/S or Up/Down arrow keys to change level \n\nControls: \nA/D or Left/Right arrow keys to move \nDon't get hit \n\nMade by Louis";
-            this.text.position.x = 400 - this.text.width / 2;
-            this.text.position.y = 300 - this.text.height / 2;
+            this.text.position.x = 400 - this.text.width;
+            this.text.position.y = 300 - this.text.height;
         }
     },
 };

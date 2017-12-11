@@ -611,10 +611,10 @@ game_state.play.prototype = {
                     this.player.rightWasDown = true;
                 }
             }
-            if (this.left.isUp || this.left2.isUp) {
+            if (this.left.isUp && this.left2.isUp) {
                 this.player.leftWasDown = false;
             }
-            if (this.right.isUp || this.right2.isUp) {
+            if (this.right.isUp && this.right2.isUp) {
                 this.player.rightWasDown = false;
             }
         }

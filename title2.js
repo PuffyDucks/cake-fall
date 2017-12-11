@@ -86,7 +86,7 @@ game_state.title2.prototype = {
         if (this.t.isUp) {
             this.TWasDown = false;
         }
-        if (this.u.isDown && localStorage.finished === "true") {
+        if (this.zero.isDown && localStorage.finished === "true") {
             localStorage.finished = false;
             localStorage.level = 1;
             localStorage.skinOn = false;
@@ -98,10 +98,10 @@ game_state.title2.prototype = {
             this.selectedLevel = localStorage.level;
         }
 				if (localStorage.finished === "true") {
-            this.text.text = "Press enter to start level "  + this.selectedLevel + "\nW/S or ↑↓ to change level \nPress 0 to reset the game. \nToggle Skin with T. \nChallenge Skin: " + localStorage.skinOn + "\n\nControls: \n←→ or Left/Right arrow keys to move \nDon't get hit \n\nMade by Louis";
+            this.text.text = "Press enter to start level "  + this.selectedLevel + "\nWASD or Arrow Keys to change level \nPress 0 to reset the game. \nToggle Skin with T. \nChallenge Skin: " + localStorage.skinOn + "\n\nMade by Louis";
             this.text.position.y = 75;
         } else {
-            this.text.text = "Press enter to start level "  + this.selectedLevel + "\nW/S or ↑↓ to change level \n\nControls: \nA/D or ←→ arrow keys to move \nDon't get hit \n\nMade by Louis";
+            this.text.text = "Press enter to start level "  + this.selectedLevel + "\nWASD or Arrow Keys to change level \n\nMade by Louis";
             this.text.position.x = 400 - this.text.width / 2;
             this.text.position.y = 300 - this.text.height / 2;
         }

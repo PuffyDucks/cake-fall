@@ -76,7 +76,7 @@ game_state.title2.prototype = {
         if (this.up.isUp && this.up2.isUp) {
             this.upWasDown = false;
         }
-        if (this.down.isUp && (this.down2.isUp) {
+        if (this.down.isUp && this.down2.isUp) {
             this.downWasDown = false;
         }
         if (this.T.isDown && localStorage.finished === "true") {

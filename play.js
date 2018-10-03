@@ -177,7 +177,7 @@ game_state.play.prototype = {
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[0],[0],[0],[0]],
-        [[ ],[ ],[ ],[ ],[ ]],
+        [[ ],[ ],[ ],[0],[0]],
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
         [[ ],[ ],[ ],[ ],[ ]],
@@ -583,7 +583,7 @@ game_state.play.prototype = {
             }
         } else
         if (this.level === this.levels.length + 1 && this.textSaid === false) {
-            this.text = game.add.text(10, 10, "Well, congratualations. You finished the demo! \nThe full version will come out soon with more \nlevels, better graphics, new features, and more! \n\n Thank you for playing my game! ヽ(‘ ∇‘ )ノ\n\nChallenge Skin Unlocked.\n Press enter to go back.", {font: "bold 32px Arial", fill: "#ffffff", align: "center" });
+            this.text = game.add.text(10, 10, "Well, congratualations. You finished the demo! \nThe full version will come out soon with more \nlevels, better graphics, new features, and more! \n(jk I'm probably never gonna finish this lol)\n\n Thank you for playing my game! ヽ(‘ ∇‘ )ノ\n\nChallenge Skin Unlocked.\n Press enter to go back.", {font: "bold 32px Arial", fill: "#ffffff", align: "center" });
             this.textSaid = true;
             this.text.position.x = 400 - this.text.width / 2;
             this.text.position.y = 300 - this.text.height / 2;

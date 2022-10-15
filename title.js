@@ -107,10 +107,10 @@ game_state.title.prototype = {
             this.selectedLevel = localStorage.level;
         }
 				if (localStorage.finished === "true") {
-            this.text.text = "Press enter to start level "  + this.selectedLevel + "\nWASD or Arrow Keys to change level \nPress 0 to reset the game. \nToggle Skin with T. \nChallenge Skin: " + localStorage.skinOn + "\n\nMade by Louis";
+            this.text.text = "Press enter to start level "  + this.selectedLevel + "\nWASD or Arrow Keys to change level \nPress 0 to reset the game. \nToggle Skin with T. \nChallenge Skin: " + localStorage.skinOn + "\n\nMade by PuffyDucks";
             this.text.position.y = 75;
         } else {
-            this.text.text = "Press enter to start level "  + this.selectedLevel + "\nWASD or Arrow Keys to change level \n\nMade by Louis";
+            this.text.text = "Press enter to start level "  + this.selectedLevel + "\nWASD or Arrow Keys to change level \n\nMade by PuffyDucks";
             this.text.position.x = 400 - this.text.width / 2;
             this.text.position.y = 300 - this.text.height / 2;
         }
